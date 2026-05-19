@@ -4,8 +4,8 @@
 
 ### Datos de la Pareja
 
-* **Nombre 1:** Sthephany Cordero
-* **Nombre 2:** Luis Torrealba
+* **Nombre 1:** mildred jimenez 
+* **Nombre 2:** Luis Hurtado
 
 ---
 
