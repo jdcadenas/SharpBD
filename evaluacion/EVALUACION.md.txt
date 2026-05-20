@@ -1,0 +1,26 @@
+# Evaluación de Laboratorio: Flujo Bilingüe (10%)
+
+**IUJO - Algorítmica y Programación**
+
+### Datos del Estudiante
+*   **Nombre:** Javier Sanchez
+
+---
+
+## FASE 1: Base de Datos (Módulos)
+
+*   **Análisis de Integridad:** En el script SQL, la relación tiene la instrucción `ON DELETE CASCADE`. ¿Qué sucede con las preguntas asociadas si eliminamos un módulo de la tabla modulo?
+    *   **R:** Si se elimina un módulo de la tabla `modulo`, todas las preguntas asociadas a ese módulo en la tabla `pregunta` se eliminarán automáticamente. Esto ocurre gracias a la integridad referencial del `ON DELETE CASCADE`, evitando que queden registros huérfanos en la base de datos.
+
+*   **Tipos de Datos:** ¿Por qué es obligatorio que el campo id_modulo (en pregunta) tenga el mismo tipo de dato que el id (en modulo) para que la relación funcione?
+    *   **R:** Es obligatorio porque ambos campos representan el mismo dato lógico para establecer la Clave Foránea (Foreign Key). Si los tipos de datos o sus longitudes no coinciden exactamente, el motor de la base de datos no podrá indexar ni comparar los valores en memoria, rompiendo la coherencia de la relación.
+
+---
+
+## FASE 4: Preguntas Teóricas
+
+*   **Lógica:** Si al abrir la ventana de preguntas estas aparecen vacías para todos los módulos (pero no hay errores de código), ¿qué objeto revisaría primero: la Conexion o la consulta SQL? Justifique.
+    *   **R:** Revisaría primero la **Consulta SQL**. Si el problema fuera la `Conexion`, el programa arrojaría un error crítico en pantalla (una excepción) al intentar abrir el puente con la base de datos. Como no hay errores de código pero la grilla aparece vacía, significa que la conexión es exitosa, pero la cláusula `WHERE` de la consulta SQL podría estar mal estructurada o filtrando por un ID inexistente, haciendo que la base de datos devuelva cero registros.
+
+*   **Encapsulamiento:** ¿Cuál es la ventaja de recibir el ID mediante el Constructor y guardarlo en una variable private, en lugar de simplemente declarar una variable public que cualquiera pueda modificar?
+    *   **R:** La ventaja principal es el **Principio de Encapsulamiento y la Seguridad del Flujo**. Al recibir el ID en el constructor y guardarlo en una variable `private`, garantizamos que ese valor sea de "solo lectura" para el resto de la aplicación externa y que no pueda ser alterado por error desde otras ventanas durante la ejecución, manteniendo la integridad del filtro de datos.
