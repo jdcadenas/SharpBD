@@ -4,7 +4,7 @@
 
 ### Datos de la Pareja
 
-* **Nombre 1:** ________________________________________
+* **Nombre 1:** __Javier__Sánchez ____________________________________
 * **Nombre 2:** ________________________________________
 
 ---
@@ -33,11 +33,11 @@ Su examen consiste en completar la **Gestión de Módulos y Preguntas** dentro d
 1. **Tablas:** Asegúrese de tener creadas las tablas `modulo` y `pregunta` (ver scripts en `README.md`).
 2. **Datos:** Inserte manualmente en phpMyAdmin los 4 módulos: *Architecture, Anthropology, Calculus, Sports*.
 3. **Análisis de Integridad:** En el script SQL, la relación tiene la instrucción `ON DELETE CASCADE`. ¿Qué sucede con las preguntas asociadas si eliminamos un módulo de la tabla `modulo`?
-* *R:* ________________________________________________
+* *R:* _Todas las preguntas asociadas a ese módulo se eliminarán automáticamente de la tabla pregunta. Esto garantiza la integridad referencial y evita que queden datos "huérfanos" (preguntas que apuntan a un módulo que ya no existe)._______________________________________________
 
 
 4. **Tipos de Datos:** ¿Por qué es obligatorio que el campo `id_modulo` (en `pregunta`) tenga el mismo tipo de dato que el `id` (en `modulo`) para que la relación funcione?
-* *R:* ________________________________________________
+* *R:* _Para que el motor de MySQL pueda enlazarlos físicamente y validar las reglas de relación, la estructura y el espacio en memoria de ambos campos deben ser idénticos (por ejemplo, ambos deben ser de tipo INT)._______________________________________________
 
 
 
@@ -62,11 +62,11 @@ Su examen consiste en completar la **Gestión de Módulos y Preguntas** dentro d
 ### FASE 4: Preguntas Teóricas
 
 1. **Lógica:** Si al abrir la ventana de preguntas estas aparecen vacías para todos los módulos (pero no hay errores de código), ¿qué objeto revisaría primero: la `Conexion` o la consulta `SQL`? Justifique.
-* *R:* ________________________________________________
+* *R:* _Revisaría la consulta SQL. Si la conexión fallara, el programa mostraría un mensaje de error. Como no hay error, significa que sí conectó bien, pero la consulta SQL no encontró datos (o la tabla en phpMyAdmin está vacía)._______________________________________________
 
 
 2. **Encapsulamiento:** ¿Cuál es la ventaja de recibir el ID mediante el **Constructor** y guardarlo en una variable `private`, en lugar de simplemente declarar una variable `public` que cualquiera pueda modificar?
-* *R:* ________________________________________________
+* *R:* _Es por seguridad. Al pedirlo en el constructor, obligamos a que la ventana siempre reciba un ID para poder abrirse. Al ser private, evitamos que otra parte del código lo modifique por error y arruine los datos._______________________________________________
 
 
 
