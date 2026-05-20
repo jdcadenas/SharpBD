@@ -9,6 +9,7 @@ namespace ejemploBd
 	public partial class GestionModulos : Form
 	{
 		// EXAMEN PASO 1: Esta cadena está vacía. Cópiala de MainForm.cs
+		// Código verificado y completado por Javier Sanchez
 		private string cadenaConexion = "Server=localhost;Database=peducativa;Uid=root;Pwd=;"; 
 
 		public GestionModulos()
@@ -22,6 +23,8 @@ namespace ejemploBd
 			try {
 				using (MySqlConnection conexion = new MySqlConnection(cadenaConexion)) {
 					// EXAMEN PASO 2: Consulta bilingüe incompleta (Seleccione id, nombre_es y nombre_en)
+					// Paso 2 y 3: Implementación del adaptador y consulta SQL - Javier Sanchez
+					
 					string consulta = "SELECT id, nombre_es, nombre_en FROM modulo";
 					
 					conexion.Open();
